@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  // @include font-Lato;
+}
+
+* {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  // сброс стилий summery
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  // сброс стилий unlisted list
+  ul {
+    list-style-type: none;
+  }
+
+  // сброс стрелок у input number
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
+  }
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.center {
+  padding-left: calc(50% - $widthSite/2);
+  padding-right: calc(50% - $widthSite/2);
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// main {
+//     @include displayFlex_ALL_Center
+// }

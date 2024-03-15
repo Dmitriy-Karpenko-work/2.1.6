@@ -1,0 +1,48 @@
+@media (min-width: 750px) and (max-width: 1141px) {
+  .catalog {
+    max-width: 750px;
+  }
+
+  .sort {
+    right: 0%;
+  }
+
+  .conteiner-center {
+    gap: 50px;
+    align-items: flex-start;
+
+    .info-section {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (min-width: 360px) and (max-width: 749px) {
+  .catalog {
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 749px) {
+  .conteiner-center {
+    margin-left: 40px;
+    margin-right: 40px;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1px) and (max-width: 1160px) {
+  .shopping-cart {
+    display: flex;
+    flex-direction: column;
+
+    &__right {
+      display: flex;
+      flex-direction: row;
+      align-content: center;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+  }
+}

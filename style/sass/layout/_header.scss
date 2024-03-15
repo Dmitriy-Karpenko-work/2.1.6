@@ -1,0 +1,373 @@
+nav {
+  background-color: $Mainbackgroungcolor;
+}
+
+.top-menu {
+  height: 75px;
+  background-color: $Mainbackgroungcolor;
+  display: flex;
+  justify-content: space-around;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  .logo-search {
+    @include displayFlex_ALL_Center;
+    gap: 41px;
+
+    .main-logo {
+      content: url(../../img/header/Logo_header.svg);
+      content: url(../style/img/header/Logo_header.svg);
+      width: 44px;
+      height: 38px;
+    }
+
+    .search-hover {
+      display: flex;
+      flex-direction: row;
+      @include displayFlex_ALL_Center;
+      gap: 10px;
+    }
+
+    .search {
+      &__form::before {
+        @include displayFlex_ALL_Center;
+        background-color: #3a3a3a;
+        content: url(../style/img/header/search_header.svg);
+        position: relative;
+        width: 30px;
+        padding: 2px 5px 2px 5px;
+        height: 38px;
+        border: 1px solid $MainColorPink;
+        border-right: none;
+        margin-right: -1px;
+        border-radius: 5px 0px 0px 5px;
+      }
+
+      &__form {
+        @include displayFlex_ALL_Center;
+
+        display: flex;
+        flex-direction: row;
+        font-family: "Lato";
+
+        .input {
+          box-shadow: none;
+        }
+
+        .custom_input {
+          background-color: #3a3a3a;
+          max-width: 400px;
+          height: 44px;
+          border: 1px solid $MainColorPink;
+          border-left: #3a3a3a;
+          border-left: none;
+          padding-right: -1px;
+          border-radius: 0px 5px 5px 0px;
+        }
+
+        .input:focus {
+          background: #f2f2f2;
+          border: 1px solid $MainColorPink;
+          border-left: none;
+          border-right: 1px solid transparent;
+        }
+        .input:focus ~ .search__form::before {
+        }
+      }
+    }
+  }
+
+  .user_info {
+    @include displayFlex_ALL_Center;
+    gap: 41px;
+
+    // &__icon-header:hover {
+    //     background: $MainColorPink;
+    &__setting {
+      width: 36px;
+      height: 27px;
+    }
+
+    &__setting-box {
+      position: relative;
+
+      svg {
+        cursor: pointer;
+      }
+
+      input {
+        position: absolute;
+        left: -9999px;
+        visibility: hidden;
+      }
+
+      .setting-menu {
+        z-index: 1;
+        padding: 34px 25px 34px 37px;
+        position: absolute;
+        right: -190px;
+        top: 70px;
+        width: 232px;
+        background-color: #f1e4e6;
+        border: 1px solid $MainColorPink;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+      }
+
+      @media (min-width: 768px) and (max-width: 830px) {
+        .setting-menu {
+          right: -180px;
+        }
+      }
+
+      @media (min-width: 760px) and (max-width: 786px) {
+        .setting-menu {
+          right: -170px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .setting-menu {
+          right: 0px;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .setting-menu {
+          ul .mobile-sub-menu {
+            display: block;
+          }
+        }
+      }
+
+      input:checked ~ .setting-menu {
+        transition-duration: 2000ms;
+        right: -4000px;
+        z-index: 1;
+      }
+
+      ul .title {
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+      }
+
+      ul .mobile-sub-menu {
+        padding-top: 10px;
+        display: none;
+
+        .link {
+          border: 1px solid $Mainbackgroungcolor;
+          padding: 5px;
+        }
+
+        .link:hover {
+          padding: 5px;
+          background-color: $MainColorPink;
+          border-radius: 5px;
+          color: $TextColor2;
+        }
+
+        .mobile-link {
+          @include displayFlex_ALL_Center;
+          justify-content: flex-start;
+          border: 1px solid $MainColorPink;
+          color: $TextColor2;
+          svg {
+            path {
+              fill: $MainColorPink;
+            }
+          }
+        }
+      }
+
+      ul ul .title {
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: $MainColorPink;
+        margin-top: 100px;
+
+        .link {
+          padding: 5px;
+        }
+
+        .link:hover {
+          padding: 5px;
+          background-color: $MainColorPink;
+          border-radius: 5px;
+          color: $TextColor2;
+        }
+      }
+
+      .setting-menu-category {
+        margin-top: 24px;
+      }
+
+      .sub-category {
+        margin-top: 5px;
+
+        .link {
+          padding: 5px;
+        }
+
+        .link:hover {
+          padding: 5px;
+          background-color: $MainColorPink;
+          border-radius: 5px;
+        }
+      }
+
+      ul ul li {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        padding-left: 10px;
+        font-family: Lato;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        letter-spacing: 0em;
+
+        color: $TextColor2;
+      }
+    }
+
+    .user_info__user {
+      content: url(../style/img/header/user_header.svg);
+      width: 33px;
+      height: 33px;
+    }
+
+    .user_info__shopping-cart {
+      content: url(../style/img/header/shopping-cart_header.svg);
+      width: 36px;
+      height: 33px;
+    }
+  }
+
+  .icon-header:hover {
+    background-color: $MainColorPink;
+    border-radius: 3px;
+  }
+
+  .icon-header img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .icon-header {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+// главная страница обложка
+.big-logo-index {
+  @include nocelect;
+  background-color: #f1e4e6;
+}
+
+.big-logo-index {
+  @include displayFlex_ALL_Center;
+  margin-left: -100px;
+
+  .left-img {
+    max-width: 800px;
+    max-height: 765px;
+  }
+
+  .left-img img {
+    width: 100%;
+  }
+
+  .right-name {
+    .block-name-and-figure {
+      margin-left: -100px;
+      padding-right: 10px;
+      @include displayFlex_ALL_Center;
+
+      color: $TextColor1;
+
+      .block-img-pink {
+        width: 12px;
+        height: 92px;
+        background-color: $MainColorPink;
+      }
+
+      .name-shop {
+        .up-name {
+          font-size: 48px;
+          font-weight: 900;
+          line-height: 58px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+
+        .down-name {
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 38px;
+          letter-spacing: 0em;
+          text-align: left;
+
+          .name-pink {
+            color: $MainColorPink;
+          }
+        }
+      }
+    }
+  }
+}
+
+// в продукте "хлебные крошки"
+.nav_bunner {
+  *a {
+    color: $TextColor2;
+  }
+
+  *a:hover {
+    background-color: $MainColorPink;
+    border-radius: 5px;
+  }
+
+  @include displayFlex_ALL_Center;
+  justify-content: space-around;
+  background-color: #f8f3f4;
+  width: 100%;
+  height: 150px;
+  &__speech {
+    color: $MainColorPink;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+  }
+
+  &__bread_crumbs {
+    a {
+      color: rgb(0, 175, 6);
+    }
+
+    &__current_page {
+      color: $MainColorPink;
+
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 17px;
+    }
+  }
+}

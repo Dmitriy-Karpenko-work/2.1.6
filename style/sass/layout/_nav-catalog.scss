@@ -1,0 +1,43 @@
+.nav-catalog {
+  background-color: #f8f3f4;
+  @include displayFlex_ALL_Center;
+  justify-content: space-around;
+  height: 148px;
+
+  &__title {
+    color: $MainColorPink;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+
+  &__bread-crumps {
+    display: flex;
+
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $TextColor2;
+
+    &__link:not(:last-child)::after {
+      content: "/";
+      padding: 8px;
+    }
+
+    &__link:last-child {
+      color: $MainColorPink;
+      font-weight: bold;
+    }
+  }
+}
+@media (min-width: 1px) and (max-width: 425px) {
+  .nav-catalog {
+    flex-direction: column;
+  }
+}
