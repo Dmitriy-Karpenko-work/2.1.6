@@ -434,7 +434,7 @@ main {
   align-items: center;
   flex-direction: row;
   max-height: 700px;
-  background: #F7F7F7;
+  background: #f7f7f7;
   border: 1px solid #EAEAEA;
 }
 .slider .swipe-1 {
@@ -557,6 +557,11 @@ main {
   fill: white;
 }
 
+@media (min-width: 1px) and (max-width: 768px) {
+  .clothing-info-box .clothing-info {
+    margin-top: 0px;
+  }
+}
 main {
   gap: 0px;
 }
